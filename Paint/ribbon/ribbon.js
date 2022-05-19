@@ -126,10 +126,10 @@
 					extraClass: 'ribbon-tooltip'
 				});
 			});
-			
-			ribObj.find('.ribbon-section').each(function(index) {
-				$(this).after('<div class="ribbon-section-sep"></div>');
-			});
+
+			// ribObj.find('.ribbon-section').each(function(index) {
+			// 	$(this).after('<div class="ribbon-section-sep"></div>');
+			// });
 
 			ribObj.find('div').attr('unselectable', 'on');
 			ribObj.find('span').attr('unselectable', 'on');
@@ -191,3 +191,24 @@
 	};
 
 })( jQuery );
+
+function myFunctionPaste() {
+	document.getElementById("pasteDropdown").classList.toggle("show");
+}
+
+function myFunctionSelect() {
+	document.getElementById("selectDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+	if (!event.target.matches('.button-title')) {
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+			var openDropdown = dropdowns[i];
+			if (openDropdown.classList.contains('show')) {
+				openDropdown.classList.remove('show');
+			}
+		}
+	}
+}

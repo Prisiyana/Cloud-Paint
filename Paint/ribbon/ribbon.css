@@ -14,6 +14,34 @@ body
 	background: white;
 }
 
+.dropdown {
+	position: relative;
+}
+
+.dropdown-content {
+	display: none;
+	position: fixed;
+	margin-top: 22px;
+	background-color: #f1f1f1;
+	min-width: 100px;
+	overflow: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content span {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown span:hover {background-color: #f7df81;}
+
+.dropdown-content span:hover {background-color: #ddd;}
+
+.show {display: block;}
+
 #ribbon
 {
 	font-family: "Segoe UI" , Verdana, Tahoma, Helvetica, sans-serif;
@@ -32,7 +60,7 @@ body
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 130px;
+	height: 120px;
 }
 
 #ribbon.backstage
@@ -137,7 +165,7 @@ body
 
 #ribbon .ribbon-tab
 {
-	height: 90px;
+	height: 82px;
 	padding: 5px;
 	margin-top: 5px;
 	border-top: 1px solid #b6babf;
@@ -205,7 +233,7 @@ body
 {
 	float: left;
 	position: relative;
-	height: 90px;
+	height: 82px;
 }
 
 #ribbon .ribbon-section-sep
@@ -221,7 +249,7 @@ body
 
 #ribbon .ribbon-button
 {
-	padding: 4px 6px;
+	padding: 2px 0px 2px 0px;
 	border: 1px solid transparent;
 	-webkit-border-radius: 3px 3px 3px 3px;
 	-moz-border-radius: 3px 3px 3px 3px;
