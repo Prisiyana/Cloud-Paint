@@ -192,12 +192,16 @@
 
 })( jQuery );
 
-function myFunctionPaste() {
+function dropdownPaste() {
 	document.getElementById("pasteDropdown").classList.toggle("show");
 }
 
-function myFunctionSelect() {
+function dropdownSelect() {
 	document.getElementById("selectDropdown").classList.toggle("show");
+}
+
+function dropdownRotate() {
+	document.getElementById("rotateDropdown").classList.toggle("show");
 }
 
 window.onclick = function(event) {

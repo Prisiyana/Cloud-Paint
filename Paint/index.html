@@ -75,7 +75,7 @@
 
             <div class="ribbon-section">
                 <div class="ribbon-button ribbon-button-large dropdown" id="paste-btn">
-                    <span class="button-title" onclick="myFunctionPaste()">
+                    <span class="button-title" onclick="dropdownPaste()">
                         Paste
                         <br/>
                         <img class="ribbon-icon ribbon-normal" src="PaintIcons/dropdown-arrow.png" width="5px" height="5px"/>
@@ -84,8 +84,8 @@
 <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/new-table.png" />-->
 
                     <div id="pasteDropdown" class="dropdown-content">
-                        <span>Paste</span>
-                        <span>Paste from</span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Clipboard/paste.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Paste</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Clipboard/paste-from.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Paste from</td></tr></table></span>
                     </div>
                 </div>
             </div>
@@ -118,14 +118,26 @@
 
 
 
-                <div class="ribbon-button ribbon-button-large" id="select-btn">
-                    <span class="button-title">
+                <div class="ribbon-button ribbon-button-large dropdown" id="select-btn">
+                    <span class="button-title" onclick="dropdownSelect()">
                         Select
                         <br/>
                         <img class="ribbon-icon ribbon-normal" src="PaintIcons/dropdown-arrow.png" width="5px" height="5px"/>
                     </span>
-                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Clipboard/paste.png"/>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Image/Select/rectangular-selection.png" height="40px" width="40px"/>
                     <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/new-table.png" />-->
+
+                    <div id="selectDropdown" class="dropdown-content">
+                        <div style="background-color: #dddddd; border-bottom: 1px solid gray; padding: 2px;">Selection shapes</div>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Image/Select/rectangular-selection.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Rectangular selection</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Image/Select/free-form-selection.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Free-form selection</td></tr></table></span>
+
+                        <div style="background-color: #dddddd; border-bottom: 1px solid gray; padding: 2px;">Selection options</div>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Image/Select/select-all.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Select all</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Image/Select/invert-selection.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Invert selection</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Image/Select/delete.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Delete</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Image/Select/transparent-selection.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Transparent selection</td></tr></table></span>
+                    </div>
                 </div>
 
 
@@ -147,11 +159,23 @@
                     <img class="ribbon-icon ribbon-normal" src="PaintIcons/Image/resize.png"/>
                     <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/repeat.png" />-->
                 </div>
-                <div class="ribbon-button ribbon-button-small" id="rotate-or-flip-btn">
-                    <span class="button-title">Rotate or flip</span>
+                <div class="ribbon-button ribbon-button-small dropdown" id="rotate-or-flip-btn">
+                    <div class="button-title" onclick="dropdownRotate()">
+                        Rotate or flip
+
+                        <img class="ribbon-icon ribbon-normal" src="PaintIcons/dropdown-arrow.png" style="position: absolute; width: 5px; height: 5px; margin: 5px 5px 5px 7px"/>
+                    </div>
                     <span class="button-help">Message...</span>
                     <img class="ribbon-icon ribbon-normal" src="PaintIcons/Image/Rotate/rotate-right-90.png"/>
                     <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/run.png" />-->
+
+                    <div id="rotateDropdown" class="dropdown-content">
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Image/Rotate/rotate-right-90.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Rotate right 90&#176;</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Image/Rotate/rotate-left-90.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Rotate left 90&#176;</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Image/Rotate/rotate-180.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Rotate 180&#176;</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Image/Rotate/flip-vertical.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Flip vertical</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Image/Rotate/flip-horizontal.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Flip horizontal</td></tr></table></span>
+                    </div>
                 </div>
             </div>
         </div>
