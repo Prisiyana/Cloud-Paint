@@ -204,6 +204,10 @@ function dropdownRotate() {
 	document.getElementById("rotateDropdown").classList.toggle("show");
 }
 
+function dropdownBrushes() {
+	document.getElementById("brushesDropdown").classList.toggle("show");
+}
+
 window.onclick = function(event) {
 	if (!event.target.matches('.button-title')) {
 		var dropdowns = document.getElementsByClassName("dropdown-content");

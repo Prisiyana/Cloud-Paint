@@ -114,10 +114,6 @@
 
             <div class="ribbon-section">
 
-
-
-
-
                 <div class="ribbon-button ribbon-button-large dropdown" id="select-btn">
                     <span class="button-title" onclick="dropdownSelect()">
                         Select
@@ -139,10 +135,6 @@
                         <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Image/Select/transparent-selection.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Transparent selection</td></tr></table></span>
                     </div>
                 </div>
-
-
-
-
 
             </div>
 
@@ -179,6 +171,118 @@
                 </div>
             </div>
         </div>
+
+        <div class="ribbon-section-sep"></div>
+
+
+
+        <div class="ribbon-section">
+
+            <span class="section-title">Tools</span>
+
+            <div class="ribbon-section">
+                <div style="width: 18px; margin-top: 8px;" class="ribbon-button ribbon-button-small" id="pencil-btn">
+                    <span class="button-help">Message...</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/pencil.png"/>
+                    <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/run.png" />-->
+                </div>
+                <div style="width: 18px; margin-top: 5px;" class="ribbon-button ribbon-button-small" id="eraser-btn">
+                    <span class="button-help">Message...</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/eraser.png"/>
+                    <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/repeat.png" />-->
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div style="width: 18px; margin-top: 8px;" class="ribbon-button ribbon-button-small" id="fill-with-color-btn">
+                    <span class="button-help">Message...</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/fill-with-color.png"/>
+                    <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/run.png" />-->
+                </div>
+                <div style="width: 18px; margin-top: 5px;" class="ribbon-button ribbon-button-small" id="picker-btn">
+                    <span class="button-help">Message...</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/picker.png"/>
+                    <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/repeat.png" />-->
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div style="width: 18px; margin-top: 8px;" class="ribbon-button ribbon-button-small" id="text-btn">
+                    <span class="button-help">Message...</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/text.png"/>
+                    <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/run.png" />-->
+                </div>
+                <div style="width: 18px; margin-top: 5px;" class="ribbon-button ribbon-button-small" id="magnifier-btn">
+                    <span class="button-help">Message...</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/magnifier.png"/>
+                    <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/repeat.png" />-->
+                </div>
+            </div>
+        </div>
+
+        <div class="ribbon-section-sep"></div>
+
+        <div class="ribbon-section">
+            <div class="ribbon-button ribbon-button-large dropdown" id="brushes-btn">
+                    <span class="button-title" onclick="dropdownBrushes()">
+                        Brushes
+                        <br/>
+                        <img class="ribbon-icon ribbon-normal" src="PaintIcons/dropdown-arrow.png" width="5px" height="5px"/>
+                    </span>
+                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/brush.png" width="40px" height="40px"/>
+                <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/new-table.png" />-->
+
+                <div id="brushesDropdown" class="dropdown-content">
+                    <table>
+                        <tr>
+                            <td><span><img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/brush.png" width="40px" height="40px"/></span></td>
+                            <td><span><img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/calligraphy-brush-1.png" width="40px" height="40px"/></span></td>
+                            <td><span><img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/calligraphy-brush-2.png" width="40px" height="40px"/></span></td>
+                        </tr>
+                        <tr>
+                            <td><span><img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/airbrush.png" width="40px" height="40px"/></span></td>
+                            <td><span><img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/oil-brush.png" width="40px" height="40px"/></span></td>
+                            <td><span><img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/crayon.png" width="40px" height="40px"/></span></td>
+                        </tr>
+                        <tr>
+                            <td><span><img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/marker.png" width="40px" height="40px"/></span></td>
+                            <td><span><img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/natural-pencil.png" width="40px" height="40px"/></span></td>
+                            <td><span><img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/watercolor-brush.png" width="40px" height="40px"/></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="ribbon-section-sep"></div>
+
+
+
+
+<!--        Shapes-->
+
+<!--        <div class="ribbon-section">-->
+<!--            <span class="section-title">Shapes</span>-->
+
+<!--            <div style="background-color: white; width: 500px; height: 57px; border: 1px solid gray; margin-top: 4px;">-->
+<!--                <div class="ribbon-section">-->
+<!--                    <div style="width: 12px; height: 11px" class="ribbon-button ribbon-button-small" id="">-->
+<!--                        <span class="button-help">Message...</span>-->
+<!--                        <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/pencil.png" style="height: 12px; width: 12px"/>-->
+<!--                        &lt;!&ndash;                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/run.png" />&ndash;&gt;-->
+<!--                    </div>-->
+<!--                    <div style="width: 12px; height: 11px" class="ribbon-button ribbon-button-small" id="">-->
+<!--                        <span class="button-help">Message...</span>-->
+<!--                        <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/eraser.png" style="height: 12px; width: 12px"/>-->
+<!--                        &lt;!&ndash;                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/repeat.png" />&ndash;&gt;-->
+<!--                    </div>-->
+<!--                    <div style="width: 12px; height: 11px" class="ribbon-button ribbon-button-small" id="">-->
+<!--                        <span class="button-help">Message...</span>-->
+<!--                        <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/eraser.png" style="height: 12px; width: 12px"/>-->
+<!--                        &lt;!&ndash;                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/repeat.png" />&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
 
 
     </div>
