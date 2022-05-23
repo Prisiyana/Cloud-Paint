@@ -138,7 +138,7 @@
 
             </div>
 
-            <div class="ribbon-section">
+            <div class="ribbon-section" style="width: 75px">
                 <div class="ribbon-button ribbon-button-small" id="crop-btn">
                     <span class="button-title">Crop</span>
                     <span class="button-help">Message...</span>
@@ -146,14 +146,14 @@
                     <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/run.png" />-->
                 </div>
                 <div class="ribbon-button ribbon-button-small" id="resize-and-skew-btn">
-                    <span class="button-title">Resize and skew</span>
+                    <span class="button-title">Resize</span>
                     <span class="button-help">Message...</span>
                     <img class="ribbon-icon ribbon-normal" src="PaintIcons/Image/resize.png"/>
                     <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/repeat.png" />-->
                 </div>
                 <div class="ribbon-button ribbon-button-small dropdown" id="rotate-or-flip-btn">
                     <div class="button-title" onclick="dropdownRotate()">
-                        Rotate or flip
+                        Rotate
 
                         <img class="ribbon-icon ribbon-normal" src="PaintIcons/dropdown-arrow.png" style="position: absolute; width: 5px; height: 5px; margin: 5px 5px 5px 7px"/>
                     </div>
@@ -254,38 +254,204 @@
 
         <div class="ribbon-section-sep"></div>
 
+        <div class="ribbon-section">
+            <span class="section-title">Shapes</span>
 
+            <div class="ribbon-section" style="width: 203px">
 
+                <div class="slideshow-container">
 
-<!--        Shapes-->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 
-<!--        <div class="ribbon-section">-->
-<!--            <span class="section-title">Shapes</span>-->
+                    <div class="slide fade">
+                        <div class="ribbon-section">
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="line-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/line.png"/>
+                            </div>
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="right-triangle-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/right-triangle.png"/>
+                            </div>
+                        </div>
+                        <div class="ribbon-section">
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="curve-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/curve.png"/>
+                            </div>
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="diamond-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/diamond.png"/>
+                            </div>
+                        </div>
+                        <div class="ribbon-section">
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="oval-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/oval.png"/>
+                            </div>
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="pentagon-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/pentagon.png"/>
+                            </div>
+                        </div>
+                        <div class="ribbon-section">
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="rectangle-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/rectangle.png"/>
+                            </div>
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="hexagon-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/hexagon.png"/>
+                            </div>
+                        </div>
+                        <div class="ribbon-section">
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="rounded-rectangle-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/rounded-rectangle.png"/>
+                            </div>
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="right-arrow-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/right-arrow.png"/>
+                            </div>
+                        </div>
+                        <div class="ribbon-section">
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="polygon-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/polygon.png"/>
+                            </div>
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="left-arrow-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/left-arrow.png"/>
+                            </div>
+                        </div>
+                        <div class="ribbon-section">
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="triangle-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/triangle.png"/>
+                            </div>
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="up-arrow-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/up-arrow.png"/>
+                            </div>
+                        </div>
+                    </div>
 
-<!--            <div style="background-color: white; width: 500px; height: 57px; border: 1px solid gray; margin-top: 4px;">-->
-<!--                <div class="ribbon-section">-->
-<!--                    <div style="width: 12px; height: 11px" class="ribbon-button ribbon-button-small" id="">-->
-<!--                        <span class="button-help">Message...</span>-->
-<!--                        <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/pencil.png" style="height: 12px; width: 12px"/>-->
-<!--                        &lt;!&ndash;                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/run.png" />&ndash;&gt;-->
-<!--                    </div>-->
-<!--                    <div style="width: 12px; height: 11px" class="ribbon-button ribbon-button-small" id="">-->
-<!--                        <span class="button-help">Message...</span>-->
-<!--                        <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/eraser.png" style="height: 12px; width: 12px"/>-->
-<!--                        &lt;!&ndash;                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/repeat.png" />&ndash;&gt;-->
-<!--                    </div>-->
-<!--                    <div style="width: 12px; height: 11px" class="ribbon-button ribbon-button-small" id="">-->
-<!--                        <span class="button-help">Message...</span>-->
-<!--                        <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/eraser.png" style="height: 12px; width: 12px"/>-->
-<!--                        &lt;!&ndash;                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/repeat.png" />&ndash;&gt;-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+                    <div class="slide fade" style="display: none">
+                        <div class="ribbon-section">
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="down-arrow-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/down-arrow.png"/>
+                            </div>
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="heart-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/heart.png"/>
+                            </div>
+                        </div>
+                        <div class="ribbon-section">
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="four-point-star-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/four-point-star.png"/>
+                            </div>
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="lightning-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/lightning.png"/>
+                            </div>
+                        </div>
+                        <div class="ribbon-section">
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="five-point-star-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/five-point-star.png"/>
+                            </div>
+                        </div>
+                        <div class="ribbon-section">
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="six-point-star-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/six-point-star.png"/>
+                            </div>
+                        </div>
+                        <div class="ribbon-section">
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="rounded-rectangular-callout-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/rounded-rectangular-callout.png"/>
+                            </div>
+                        </div>
+                        <div class="ribbon-section">
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="oval-callout-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/oval-callout.png"/>
+                            </div>
+                        </div>
+                        <div class="ribbon-section">
+                            <div style="width: 18px;" class="ribbon-button ribbon-button-small" id="cloud-callout-btn">
+                                <span class="button-help">Message...</span>
+                                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/cloud-callout.png"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                </div>
+
+            </div>
+
+            <div class="ribbon-section" style="width: 80px;">
+                <div class="ribbon-button ribbon-button-small dropdown" id="outline-btn">
+                    <div class="button-title" onclick="dropdownOutline()">
+                        Outline
+
+                        <img class="ribbon-icon ribbon-normal" src="PaintIcons/dropdown-arrow.png" style="position: absolute; width: 5px; height: 5px; margin: 5px 5px 5px 7px"/>
+                    </div>
+                    <span class="button-help">Message...</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/outline.png"/>
+                    <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/run.png" />-->
+
+                    <div id="outlineDropdown" class="dropdown-content">
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Shapes/no-outline.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">No outline</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Shapes/solid-color.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Solid color</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Brushes/crayon.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Crayon</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Brushes/marker.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Marker</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Brushes/oil-brush.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Oil</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Brushes/natural-pencil.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Natural pencil</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Brushes/watercolor-brush.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Watercolor</td></tr></table></span>
+                    </div>
+                </div>
+
+                <div class="ribbon-button ribbon-button-small dropdown" id="fill-btn">
+                    <div class="button-title" onclick="dropdownFill()">
+                        Fill
+
+                        <img class="ribbon-icon ribbon-normal" src="PaintIcons/dropdown-arrow.png" style="position: absolute; width: 5px; height: 5px; margin: 5px 5px 5px 7px"/>
+                    </div>
+                    <span class="button-help">Message...</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Shapes/fill.png"/>
+                    <!--                    <img class="ribbon-icon ribbon-disabled" src="icons/disabled/run.png" />-->
+
+                    <div id="fillDropdown" class="dropdown-content">
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Shapes/no-outline.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">No outline</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Shapes/solid-color.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Solid color</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Brushes/crayon.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Crayon</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Brushes/marker.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Marker</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Brushes/oil-brush.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Oil</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Brushes/natural-pencil.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Natural pencil</td></tr></table></span>
+                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Brushes/watercolor-brush.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Watercolor</td></tr></table></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ribbon-section-sep"></div>
+
+<!--        Size-->
+
 
 
 
     </div>
+
+
+
 
 
 

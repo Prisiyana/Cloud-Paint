@@ -14,6 +14,54 @@ body
 	background: white;
 }
 
+.slideshow-container {
+	width: 196px;
+	height: 44px;
+	position: fixed;
+	background-color: white;
+	border: 1px solid lightgray;
+	border-bottom: 8px solid lightgray;
+	margin-top: 3px;
+	margin-left: 2px;
+}
+
+slide {
+	display: none;
+}
+
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	margin-top: 44px;
+	padding: 0px 5px 0px 5px;
+	color: black;
+	font-weight: bold;
+	font-size: 6px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	z-index: 1;
+}
+
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+	background-color: rgba(128,128,128,0.4);
+}
+
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+}
+
 .dropdown {
 	position: relative;
 }
