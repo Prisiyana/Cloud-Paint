@@ -192,5 +192,8 @@ function showSlides(n) {
 		slides[i].style.display = "none";
 	}
 
-	slides[slideIndex-1].style.display = "block";
+	if(slideIndex - 1 != 0){
+		slides[slideIndex-1].style.display = "block";
+	}
+
 }
