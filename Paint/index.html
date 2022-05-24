@@ -44,19 +44,23 @@
 
 </head>
 <body>
-<div id="ribbon">
+
+<!-- module type js-->
+<script type = "module" src = "Scripts/index.js"></script> 
+
+<div id="ribbon"> 
     <span class="ribbon-window-title"></span>
     <div class="ribbon-tab file" id="file-tab">
         <span class="ribbon-title">File</span>
         <div class="ribbon-backstage">
             This is the Backstage.<br/><br/>
 
-            <div class="button big">
+            <div id = "open-document-button" class="button big">
                 <img src="icons/normal/open-page.png" alt="Open"/>
                 <span class="label">Open</span>
                 <span class="desc">Open a document from your computer</span>
             </div><br/>
-            <div class="button big">
+            <div id = "save-img-button" class="button big">
                 <img src="icons/normal/save-page.png" alt="Save"/>
                 <span class="label">Save</span>
                 <span class="desc">Save your document to your computer</span>
@@ -85,7 +89,7 @@
 
                     <div id="pasteDropdown" class="dropdown-content">
                         <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Clipboard/paste.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Paste</td></tr></table></span>
-                        <span><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Clipboard/paste-from.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Paste from</td></tr></table></span>
+                        <span id = "paste-from-comp"><table><tr><td style="border-right: 1px solid gray; padding-right: 6px;"><img src="PaintIcons/Clipboard/paste-from.png" height="16px" width="16px"/></td><td style="padding-left: 8px;">Paste from</td></tr></table></span>
                     </div>
                 </div>
             </div>
@@ -307,8 +311,9 @@
     </div>
 </div>
 
-<div class="page" style="width: 1600px; height: 650px">
-    <canvas style="width: 100%; height: 100%"></canvas>
+<div id = "drawing-canvas-container" class="page" style="width: 1600px; height: 650px">
+    <canvas id = "drawing-canvas" width = "1600px" height = "650px"></canvas>
+    <canvas id = "temp-canvas" width = "1600px" height = "650px"></canvas>
 </div>
 </body>
 </html>
