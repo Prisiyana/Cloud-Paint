@@ -17,12 +17,6 @@
 	border-radius: 3px 3px 3px 3px;
 }
 
-a.button, a.button:visited
-{
-	color:#000;
-	text-decoration: none;
-}
-
 .button:hover
 {
 	border: 1px solid #F1C43F;
@@ -41,16 +35,7 @@ a.button, a.button:visited
 	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fee486), to(#ffd86b));
 	background: -moz-linear-gradient(#fee486, #ffd86b);
 
-
 	cursor: pointer;
-}
-
-.new-button
-{
-	padding: 2px 6px;
-	float: right;
-	width: 100px;
-	margin-top: -5px;
 }
 
 .button.big
@@ -82,9 +67,4 @@ a.button, a.button:visited
 	margin-top: 5px;
 	margin-left: 42px;
 	display: block;
-}
-
-.clear
-{
-	clear: both;
 }

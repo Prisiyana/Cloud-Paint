@@ -5,6 +5,8 @@ body
 
 .page
 {
+	width: 1600px;
+	height: 650px;
 	border: 1px solid #a5acb5;
 	margin: 10px 20px 25px 20px;
 	padding: 5px;
@@ -12,6 +14,11 @@ body
 	-moz-box-shadow: #000000 0px 0px 10px;
 	box-shadow: #000000 0px 0px 10px;
 	background: white;
+}
+
+canvas {
+	width: 100%;
+	height: 100%;
 }
 
 .slideshow-container {
@@ -66,6 +73,14 @@ slide {
 	position: relative;
 }
 
+.dropdown-arrow-image {
+	display: inline;
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	margin: 5px 5px 5px 7px;
+}
+
 .dropdown-content {
 	display: none;
 	position: fixed;
@@ -75,6 +90,21 @@ slide {
 	overflow: auto;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
+}
+
+dropdown-section {
+	background-color: #dddddd;
+	border-bottom: 1px solid gray;
+	padding: 2px;
+}
+
+.dropdown-item-image {
+	border-right: 1px solid gray;
+	padding-right: 6px;
+}
+
+.dropdown-item-text {
+	padding-left: 8px;
 }
 
 .dropdown-content span {
@@ -89,6 +119,72 @@ slide {
 .dropdown-content span:hover {background-color: #ddd;}
 
 .show {display: block;}
+
+.first-row-tools {
+	width: 18px;
+	margin-top: 8px;
+}
+
+.second-row-tools {
+	width: 18px;
+	margin-top: 5px;
+}
+
+.shape-image {
+	width: 18px;
+}
+
+.line-size-1px {
+	height: 1px;
+	width: 50px;
+	background-color: black;
+}
+
+.line-size-3px {
+	height: 3px;
+	width: 50px;
+	background-color: black;
+}
+
+.line-size-5px {
+	height: 5px;
+	width: 50px;
+	background-color: black;
+}
+
+.line-size-8px {
+	height: 8px;
+	width: 50px;
+	background-color: black;
+}
+
+.current-color-border {
+	width: 30px;
+	height: 30px;
+	border: 1px solid gray;
+	margin: auto;
+}
+
+.current-color {
+	width: 28px;
+	height: 28px;
+	border: 1px solid white;
+}
+
+.color-view {
+	width: 16px;
+	height: 16px !important;
+}
+
+.color-border {
+	border: 1px solid gray;
+}
+
+.color-size {
+	width: 12px;
+	height: 12px;
+	border: 1px solid white;
+}
 
 #ribbon
 {
@@ -350,7 +446,7 @@ slide {
 	clear: left;
 	margin: -1px 5px 0px 1px;
 }
-#ribbon .ribbon-button .ribbon-icon.ribbon-hot, #ribbon .ribbon-button .ribbon-icon.ribbon-disabled
+#ribbon .ribbon-button .ribbon-icon.ribbon-hot
 {
 	display: none;
 }
@@ -391,39 +487,6 @@ slide {
 	border: 1px solid #F1C43F;
 	background: #F1C43F;
 	cursor: pointer;
-}
-
-#ribbon .ribbon-button.disabled .ribbon-icon, #ribbon .ribbon-button.disabled:hover .ribbon-icon
-{
-	display: none;
-}
-#ribbon .ribbon-button.disabled .ribbon-icon.ribbon-disabled
-{
-	display: block;
-	opacity: 0.8;
-
-}
-#ribbon .ribbon-button.disabled .ribbon-icon.ribbon-implicit-disabled
-{
-	opacity: 0.4;
-}
-
-#ribbon .ribbon-button.disabled:hover
-{
-	border: 1px solid transparent;
-	background: transparent;
-	cursor: default;
-}
-#ribbon .ribbon-button.disabled:active
-{
-	border: 1px solid transparent;
-	background: transparent;
-	cursor: default;
-}
-
-#ribbon .ribbon-button.disabled .button-title
-{
-	color: #888;
 }
 
 .ribbon-tooltip
