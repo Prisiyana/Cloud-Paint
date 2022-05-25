@@ -22,7 +22,7 @@ canvas
 }
 
 .slideshow-container {
-	width: 196px;
+	min-width: 92px;
 	height: 44px;
 	position: fixed;
 	background-color: white;
@@ -32,7 +32,7 @@ canvas
 	margin-left: 2px;
 }
 
-slide {
+.slide {
 	display: none;
 }
 
@@ -92,7 +92,7 @@ slide {
 	z-index: 1;
 }
 
-dropdown-section {
+.dropdown-section {
 	background-color: #dddddd;
 	border-bottom: 1px solid gray;
 	padding: 2px;
@@ -131,7 +131,13 @@ dropdown-section {
 }
 
 .shape-image {
-	width: 18px;
+	width: 36px;
+	height: 36px !important;
+}
+
+.shape-size {
+	width: 35px !important;
+	height: 35px !important;
 }
 
 .line-size-1px {
@@ -184,6 +190,27 @@ dropdown-section {
 	width: 12px;
 	height: 12px;
 	border: 1px solid white;
+}
+
+.picture-border {
+	height: 78px;
+	border: 1px solid gray;
+}
+
+.picture {
+	max-height: 70px;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 4px;
+}
+
+.picture:hover {
+	background-color: #fdeeb3;
+}
+
+.picture:active {
+	background-color: #F1C43F;
 }
 
 #ribbon
