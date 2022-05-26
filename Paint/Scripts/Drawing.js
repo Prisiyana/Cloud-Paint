@@ -72,6 +72,7 @@ export default class DrawingProps {
     }
 
     drawRectangle(startingX, startingY, width, height) {
+
         this.tools.clear();
 
         let currentContext = this.tools.tempContext;
