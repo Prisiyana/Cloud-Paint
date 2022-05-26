@@ -6,6 +6,7 @@ export default class Tools {
         this.model = model;
         this.controls = controls;
 
+
         document.addEventListener('keydown', (event) => {
             if (event.ctrlKey && event.key === 'z') {
                 this.controls.undoAction();
@@ -14,6 +15,14 @@ export default class Tools {
             if (event.ctrlKey && event.key === 'y') {
                 this.controls.redoAction();
             }
+
+        });
+
+        var textButton = document.querySelector("#text-btn");
+
+        textButton.addEventListener("click", (event) => {
+
+            this.controls.setTextMode();
 
         });
 
@@ -36,7 +45,9 @@ export default class Tools {
                 this.liveText = false;
 
                 this.model.createImage(this.tempCanvas);
+
             } else {
+
                 controls.mouseDown(event, this.tempCanvas);
 
                 window.addEventListener("mousemove", mouseMove);
@@ -57,6 +68,32 @@ export default class Tools {
 
     }
 
+    drawText(x, y) {
+
+        this.clear();
+
+        this.textInput = document.createElement("input");
+
+        this.textInput.setAttribute("type", "text");
+
+        document.body.appendChild(this.textInput);
+
+        this.textInput.style.position = "absolute";
+
+        this.textInput.style.fontSize = "3rem";
+
+        this.textInput.style.top = y + 130 + "px";
+
+        this.textInput.style.left = x + "px";
+
+        this.textInput.style.fontFamily = "Times New Roman";
+
+
+        this.liveText = true;
+        this.textX = x;
+        this.textY = y;
+
+    }
     setStrokeColor(colorPicked) {
 
         this.tempContext.strokeStyle = colorPicked;
@@ -73,6 +110,7 @@ export default class Tools {
     }
 
     clear() {
+
         this.tempContext.clearRect(0, 0, this.tempCanvas.width, this.tempCanvas.height);
     }
 

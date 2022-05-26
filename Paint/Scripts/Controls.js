@@ -72,7 +72,7 @@ export default class Controls {
 
         } else if (this.mode === "text") {
 
-            this.text.drawText(this.canvasX, this.canvasY);
+            this.tools.drawText(this.canvasX, this.canvasY);
         }
     }
 
