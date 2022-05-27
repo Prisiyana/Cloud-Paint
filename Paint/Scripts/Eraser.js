@@ -11,7 +11,6 @@ export default class Eraser {
 
         eraser.addEventListener("click", (event) => {
 
-            this.controls.
             this.controls.setStrokeColor("white")
         });
 
