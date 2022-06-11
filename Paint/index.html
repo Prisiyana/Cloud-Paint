@@ -109,10 +109,8 @@
                         <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Select/free-form-selection.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Free-form selection</td></tr></table></span>
 
                         <div class="dropdown-section">Selection options</div>
-                        <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Select/select-all.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Select all</td></tr></table></span>
                         <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Select/invert-selection.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Invert selection</td></tr></table></span>
                         <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Select/delete.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Delete</td></tr></table></span>
-                        <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Select/transparent-selection.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Transparent selection</td></tr></table></span>
                     </div>
                 </div>
             </div>
@@ -191,17 +189,17 @@
                         <br/>
                         <img class="ribbon-icon ribbon-normal" src="PaintIcons/dropdown-arrow.png" width="5px" height="5px"/>
                     </span>
-                <img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/brush.png" width="40px" height="40px"/>
+                <img class="ribbon-icon ribbon-normal" id="selected-brush" src="PaintIcons/Brushes/brush.png" width="40px" height="40px"/>
 
                 <div id="brushesDropdown" class="dropdown-content">
                     <table>
                         <tr>
-                            <td><span><img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/brush.png" width="40px" height="40px"/></span></td>
-                            <td><span><img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/calligraphy-brush-1.png" width="40px" height="40px"/></span></td>
+                            <td><span><img class="ribbon-icon ribbon-normal" id="brush" src="PaintIcons/Brushes/brush.png" width="40px" height="40px" onclick="updateBrushIcon('brush')"/></span></td>
+                            <td><span><img class="ribbon-icon ribbon-normal" id="calligraphy-brush" src="PaintIcons/Brushes/calligraphy-brush-1.png" width="40px" height="40px" onclick="updateBrushIcon('calligraphy-brush')"/></span></td>
                         </tr>
                         <tr>
-                            <td><span><img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/airbrush.png" width="40px" height="40px"/></span></td>
-                            <td><span><img class="ribbon-icon ribbon-normal" src="PaintIcons/Brushes/marker.png" width="40px" height="40px"/></span></td>
+                            <td><span><img class="ribbon-icon ribbon-normal" id="airbrush" src="PaintIcons/Brushes/airbrush.png" width="40px" height="40px" onclick="updateBrushIcon('airbrush')"/></span></td>
+                            <td><span><img class="ribbon-icon ribbon-normal" id="marker" src="PaintIcons/Brushes/marker.png" width="40px" height="40px" onclick="updateBrushIcon('marker')"/></span></td>
                         </tr>
                     </table>
                 </div>

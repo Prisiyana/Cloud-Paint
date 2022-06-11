@@ -167,3 +167,7 @@ window.onclick = function(event) {
 		}
 	}
 }
+
+function updateBrushIcon(id) {
+	document.getElementById('selected-brush').setAttribute('src', document.getElementById(`${id}`).getAttribute('src'));
+}
