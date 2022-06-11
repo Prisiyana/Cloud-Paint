@@ -105,8 +105,8 @@
 
                     <div id="selectDropdown" class="dropdown-content">
                         <div class="dropdown-section">Selection shapes</div>
-                        <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Select/rectangular-selection-02.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Rectangular selection</td></tr></table></span>
-                        <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Select/free-form-selection.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Free-form selection</td></tr></table></span>
+                        <span onclick="updateSelection('rectangular-selection')"><table><tr><td class="dropdown-item-image"><img id="rectangular-selection" src="PaintIcons/Image/Select/rectangular-selection-02.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Rectangular selection</td></tr></table></span>
+                        <span onclick="updateSelection('free-form-selection')"><table><tr><td class="dropdown-item-image"><img id="free-form-selection" src="PaintIcons/Image/Select/free-form-selection.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Free-form selection</td></tr></table></span>
 
                         <div class="dropdown-section">Selection options</div>
                         <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Select/invert-selection.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Invert selection</td></tr></table></span>
@@ -304,13 +304,13 @@
                 <div class="ribbon-button ribbon-button-small color-view" id="black-btn">
                     <span class="button-help">Black</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: black;"></div>
+                        <div class="color-size" style="background-color: black;" onclick="updateColor('black-btn')"></div>
                     </div>
                 </div>
                 <div class="ribbon-button ribbon-button-small color-view" id="white-btn">
                     <span class="button-help">White</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: white;"></div>
+                        <div class="color-size" style="background-color: white;" onclick="updateColor('white-btn')"></div>
                     </div>
                 </div>
             </div>
@@ -318,13 +318,13 @@
                 <div class="ribbon-button ribbon-button-small color-view" id="gray-btn">
                     <span class="button-help">Gray</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: gray;"></div>
+                        <div class="color-size" style="background-color: gray;" onclick="updateColor('gray-btn')"></div>
                     </div>
                 </div>
                 <div class="ribbon-button ribbon-button-small color-view" id="lightgray-btn">
                     <span class="button-help">Light gray</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: lightgray;"></div>
+                        <div class="color-size" style="background-color: lightgray;" onclick="updateColor('lightgray-btn')"></div>
                     </div>
                 </div>
             </div>
@@ -332,13 +332,13 @@
                 <div class="ribbon-button ribbon-button-small color-view" id="dark-red-btn">
                     <span class="button-help">Dark red</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: darkred;"></div>
+                        <div class="color-size" style="background-color: darkred;" onclick="updateColor('dark-red-btn')"></div>
                     </div>
                 </div>
                 <div class="ribbon-button ribbon-button-small color-view" id="brown-btn">
                     <span class="button-help">Brown</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: saddlebrown;"></div>
+                        <div class="color-size" style="background-color: saddlebrown;" onclick="updateColor('brown-btn')"></div>
                     </div>
                 </div>
             </div>
@@ -346,13 +346,13 @@
                 <div class="ribbon-button ribbon-button-small color-view" id="red-btn">
                     <span class="button-help">Red</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: red;"></div>
+                        <div class="color-size" style="background-color: red;" onclick="updateColor('red-btn')"></div>
                     </div>
                 </div>
                 <div class="ribbon-button ribbon-button-small color-view" id="lightpink-btn">
                     <span class="button-help">Light pink</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: lightpink;"></div>
+                        <div class="color-size" style="background-color: lightpink;" onclick="updateColor('lightpink-btn')"></div>
                     </div>
                 </div>
             </div>
@@ -360,13 +360,13 @@
                 <div class="ribbon-button ribbon-button-small color-view" id="orange-btn">
                     <span class="button-help">Orange</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: orange;"></div>
+                        <div class="color-size" style="background-color: orange;" onclick="updateColor('orange-btn')"></div>
                     </div>
                 </div>
                 <div class="ribbon-button ribbon-button-small color-view" id="gold-btn">
                     <span class="button-help">Gold</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: gold;"></div>
+                        <div class="color-size" style="background-color: gold;" onclick="updateColor('gold-btn')"></div>
                     </div>
                 </div>
             </div>
@@ -374,13 +374,13 @@
                 <div class="ribbon-button ribbon-button-small color-view" id="yellow-btn">
                     <span class="button-help">Yellow</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: yellow;"></div>
+                        <div class="color-size" style="background-color: yellow;" onclick="updateColor('yellow-btn')"></div>
                     </div>
                 </div>
                 <div class="ribbon-button ribbon-button-small color-view" id="lightyellow-btn">
                     <span class="button-help">Light yellow</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: lightyellow;"></div>
+                        <div class="color-size" style="background-color: lightyellow;" onclick="updateColor('lightyellow-btn')"></div>
                     </div>
                 </div>
             </div>
@@ -388,13 +388,13 @@
                 <div class="ribbon-button ribbon-button-small color-view" id="green-btn">
                     <span class="button-help">Green</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: green;"></div>
+                        <div class="color-size" style="background-color: green;" onclick="updateColor('green-btn')"></div>
                     </div>
                 </div>
                 <div class="ribbon-button ribbon-button-small color-view" id="lime-btn">
                     <span class="button-help">Lime</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: lime;"></div>
+                        <div class="color-size" style="background-color: lime;" onclick="updateColor('lime-btn')"></div>
                     </div>
                 </div>
             </div>
@@ -402,13 +402,13 @@
                 <div class="ribbon-button ribbon-button-small color-view" id="turquoise-btn">
                     <span class="button-help">Turquoise</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: turquoise;"></div>
+                        <div class="color-size" style="background-color: turquoise;" onclick="updateColor('turquoise-btn')"></div>
                     </div>
                 </div>
                 <div class="ribbon-button ribbon-button-small color-view" id="paleturquoise-btn">
                     <span class="button-help">Pale turquoise</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: paleturquoise;"></div>
+                        <div class="color-size" style="background-color: paleturquoise;" onclick="updateColor('paleturquoise-btn')"></div>
                     </div>
                 </div>
             </div>
@@ -416,13 +416,13 @@
                 <div class="ribbon-button ribbon-button-small color-view" id="blue-btn">
                     <span class="button-help">Blue</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: blue;"></div>
+                        <div class="color-size" style="background-color: blue;" onclick="updateColor('blue-btn')"></div>
                     </div>
                 </div>
                 <div class="ribbon-button ribbon-button-small color-view" id="deepskyblue-btn">
                     <span class="button-help">Deep sky blue</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: deepskyblue;"></div>
+                        <div class="color-size" style="background-color: deepskyblue;" onclick="updateColor('deepskyblue-btn')"></div>
                     </div>
                 </div>
             </div>
@@ -430,13 +430,13 @@
                 <div class="ribbon-button ribbon-button-small color-view" id="cornflowerblue-btn">
                     <span class="button-help">Cornflower blue</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: cornflowerblue;"></div>
+                        <div class="color-size" style="background-color: cornflowerblue;" onclick="updateColor('cornflowerblue-btn')"></div>
                     </div>
                 </div>
                 <div class="ribbon-button ribbon-button-small color-view" id="steelblue-btn">
                     <span class="button-help">Steel blue</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: steelblue;"></div>
+                        <div class="color-size" style="background-color: steelblue;" onclick="updateColor('steelblue-btn')"></div>
                     </div>
                 </div>
             </div>
@@ -444,13 +444,13 @@
                 <div class="ribbon-button ribbon-button-small color-view" id="purple-btn">
                     <span class="button-help">Purple</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: purple;"></div>
+                        <div class="color-size" style="background-color: purple;" onclick="updateColor('purple-btn')"></div>
                     </div>
                 </div>
                 <div class="ribbon-button ribbon-button-small color-view" id="lavender-btn">
                     <span class="button-help">Lavender</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: lavender;"></div>
+                        <div class="color-size" style="background-color: lavender;" onclick="updateColor('lavender-btn')"></div>
                     </div>
                 </div>
             </div>
@@ -458,13 +458,13 @@
                 <div class="ribbon-button ribbon-button-small color-view" id="mediumpurple-btn">
                     <span class="button-help">Medium purple</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: mediumpurple;"></div>
+                        <div class="color-size" style="background-color: mediumpurple;" onclick="updateColor('mediumpurple-btn')"></div>
                     </div>
                 </div>
                 <div class="ribbon-button ribbon-button-small color-view" id="violet-btn">
                     <span class="button-help">Violet</span>
                     <div class="color-border">
-                        <div class="color-size" style="background-color: violet;"></div>
+                        <div class="color-size" style="background-color: violet;" onclick="updateColor('violet-btn')"></div>
                     </div>
                 </div>
             </div>

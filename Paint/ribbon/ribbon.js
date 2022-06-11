@@ -171,3 +171,11 @@ window.onclick = function(event) {
 function updateBrushIcon(id) {
 	document.getElementById('selected-brush').setAttribute('src', document.getElementById(`${id}`).getAttribute('src'));
 }
+
+function updateColor(id) {
+	document.getElementById('color-1-btn').getElementsByClassName('current-color')[0].style.backgroundColor = document.getElementById(`${id}`).getElementsByClassName('color-size')[0].style.backgroundColor;
+}
+
+function updateSelection(id) {
+	document.getElementById('select-btn').getElementsByTagName('img')[0].setAttribute('src', document.getElementById(`${id}`).getAttribute('src'));
+}
