@@ -280,22 +280,11 @@
                 <div class="ribbon-button ribbon-button-large" id="color-1-btn">
                     <span class="button-title">
                         Color
-                        <br/>
+                        <br>
                         1
                     </span>
                     <div class="current-color-border">
                         <div class="current-color" style="background-color: black;"></div>
-                    </div>
-                </div>
-
-                <div class="ribbon-button ribbon-button-large" id="color-2-btn">
-                    <span class="button-title">
-                        Color
-                        <br/>
-                        2
-                    </span>
-                    <div class="current-color-border">
-                        <div class="current-color" style="background-color: white;"></div>
                     </div>
                 </div>
             </div>
@@ -471,6 +460,16 @@
         </div>
 
         <div class="ribbon-section-sep"></div>
+
+<!--        Logout-->
+        <div class="ribbon-section" style="margin-left: 43%;">
+            <div class="ribbon-button ribbon-button-large" id="logout-btn">
+                    <span class="button-title">
+                        Logout
+                    </span>
+                <img class="ribbon-icon ribbon-normal" src="PaintIcons/profile.png" width="40px" height="40px"/>
+            </div>
+        </div>
     </div>
 
 <!--    Gallery tab-->
@@ -494,9 +493,15 @@
 </div>
 
 
-<div id = "drawing-canvas-container" class="page" style="width: 1600px; height: 650px">
+<div id = "drawing-canvas-container" class="page">
     <canvas id = "drawing-canvas" width = "1600px" height = "650px"></canvas>
     <canvas id = "temp-canvas" width = "1600px" height = "650px"></canvas>
+</div>
+
+<div id="add-to-gallery-btn" class="hexagon-wrapper">
+    <div class="hexagon">
+        <i>+</i>
+    </div>
 </div>
 
 <script type="text/javascript">

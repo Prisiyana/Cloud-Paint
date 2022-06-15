@@ -14,6 +14,7 @@ body
 	-moz-box-shadow: #000000 0px 0px 10px;
 	box-shadow: #000000 0px 0px 10px;
 	background: white;
+	position: absolute;
 }
 
 canvas
@@ -211,6 +212,70 @@ canvas
 
 .picture:active {
 	background-color: #F1C43F;
+}
+
+.hexagon-wrapper {
+	display: flex;
+	text-align: initial;
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+	margin-left: 90.4%;
+	margin-top: 30%;
+	position: fixed;
+}
+
+.hexagon {
+	position: relative;
+	width: 46%;
+	height: 80%;
+	margin: auto;
+	color: darkgreen;
+	background: linear-gradient(-180deg, darkslategrey, darkseagreen);
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	transition: 0.5s;
+}
+
+.hexagon i {
+	z-index: 1;
+	margin: auto;
+	font-size: 60px;
+	font-weight: bold;
+	color: transparent;
+	background: linear-gradient(45deg, white, lightgray);
+	-webkit-background-clip: text;
+}
+
+.hexagon:before,
+.hexagon:after {
+	position: absolute;
+	content: "";
+	background: inherit;
+	height: 100%;
+	width: 100%;
+	border-radius: 0;
+	transition: 0.5s;
+	transform-origin: center;
+}
+.hexagon:before {
+	transform: rotateZ(60deg);
+}
+.hexagon:after {
+	transform: rotateZ(-60deg);
+}
+.hexagon:hover {
+	border-radius: 50px;
+	transition: 0.5s;
+}
+.hexagon:hover:before {
+	border-radius: 50px;
+	transition: 0.5s;
+}
+.hexagon:hover:after {
+	border-radius: 50px;
+	transition: 0.5s;
 }
 
 #ribbon
