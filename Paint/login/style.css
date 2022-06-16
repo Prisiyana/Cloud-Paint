@@ -47,7 +47,7 @@ body{
 form .txt_field{
     position: relative;
     border-bottom: 2px solid silver;
-    margin: 30px 0;
+    margin: 30px 30px;
 }
 
 .txt_field input{
@@ -71,18 +71,3 @@ form .txt_field{
     transition: .5s;
 }
 
-.signup_link{
-    margin: 30px 0;
-    text-align: center;
-    font-size: 16px;
-    color: #666666;
-  }
-
-.signup_link a{
-    color: #2691d9;
-    text-decoration: none;
-}
-
-.signup_link a:hover{
-    text-decoration: underline;
-}
