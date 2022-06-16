@@ -33,12 +33,6 @@ export default class Colors {
             this.controls.setStrokeColor("black")
         });
 
-        var colorBtn2 = document.querySelector("#color-2-btn");
-
-        colorBtn2.addEventListener("click", (event) => {
-            this.controls.setStrokeColor("white")
-        });
-
         var blackColor = document.querySelector("#black-btn");
 
         blackColor.addEventListener("click", (event) => {
