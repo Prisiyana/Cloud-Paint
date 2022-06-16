@@ -1,37 +1,534 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Login/Signup form</title>
-    <!-- <script src="../Scripts/server.js"></script>  -->
-    <link rel="stylesheet"  type= "text/css" href="login/style.css">  
-</head>
+    <title>Paint</title>
 
+    <link href="ribbon/ribbon.css" rel="stylesheet" type="text/css"/>
+    <link href="ribbon/soft-button.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="ribbon/jquery.min.js"></script>
+    <script type="text/javascript" src="ribbon/ribbon.js"></script>
+    <script type="text/javascript" src="ribbon/jquery.tooltip.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#ribbon').ribbon();
+        });
+    </script>
+
+</head>
 <body>
-    <div class="login">
-            <h1>Cloud Paint</h1>
-            <h2>Welcome</h2>
-            <!-- <form> -->
-            <form id= 'GET' method='GET'>
-                <div class="txt_field">
-                    <input id="pass" type="PASSWORD" required>
-                    <span></span>
-                    <label hidden>PASSWORD</label>
-                </div>
-                <a class="btn btn-warning" href="index.html"> LOGIN </a>
-                </form>
+
+<!-- module type js-->
+<script type = "module" src = "Scripts/index.js"></script> 
+
+<div id="ribbon"> 
+    <span class="ribbon-window-title"></span>
+
+<!--    File tab-->
+    <div class="ribbon-tab file" id="file-tab">
+        <span class="ribbon-title">File</span>
+        <div class="ribbon-backstage">
+            <div id="new-picture-button" class="button big">
+                <img src="PaintIcons/File/new-picture.png" alt="New"/>
+                <span class="label">New</span>
+                <span class="desc">Create a new picture</span>
+            </div>
+            <br/>
+            <div id = "open-document-button"  class="button big">
+                <img src="PaintIcons/File/open-picture.png" alt="Open"/>
+                <span class="label">Open</span>
+                <span class="desc">Open an existing picture from your computer</span>
+            </div>
+            <br/>
+            <div id = "save-img-button"  class="button big">
+                <img src="PaintIcons/File/save-picture.png" alt="Save"/>
+                <span class="label">Save</span>
+                <span class="desc">Save the current picture to your computer</span>
+            </div>
+        </div>
     </div>
 
-    <!-- <script> 
 
-        const sendPass = () =>{
-          let passValue = document.getElementById("pass").value; 
-          document.getElementById("valuePass").innerHTML = passValue; 
+<!--    Home tab-->
+    <div class="ribbon-tab" id="home-tab">
+        <span class="ribbon-title">Home</span>
+
+        <div class="ribbon-section">
+            <span class="section-title">Clipboard</span>
+
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-large dropdown" id="paste-btn">
+                    <span class="button-title" onclick="dropdownPaste()">
+                        Paste
+                        <br/>
+                        <img class="ribbon-icon ribbon-normal" src="PaintIcons/dropdown-arrow.png" width="5px" height="5px"/>
+                    </span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Clipboard/paste.png"/>
+
+                    <div id="pasteDropdown" class="dropdown-content">
+                        <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Clipboard/paste.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Paste</td></tr></table></span>
+                        <span id = "paste-from-comp"><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Clipboard/paste-from.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Paste from</td></tr></table></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small" id="cut-btn">
+                    <span class="button-title">Cut</span>
+                    <span class="button-help">Cutting a selection from the canvas to the clipboard</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Clipboard/cut.png"/>
+                </div>
+                <div class="ribbon-button ribbon-button-small" id="copy-btn">
+                    <span class="button-title">Copy</span>
+                    <span class="button-help">Copping a selection from the canvas to the clipboard</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Clipboard/copy.png"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="ribbon-section-sep"></div>
+
+<!--        Image section-->
+        <div class="ribbon-section">
+            <span class="section-title">Image</span>
+
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-large dropdown" id="select-btn">
+                    <span class="button-title" onclick="dropdownSelect()">
+                        Select
+                        <br/>
+                        <img class="ribbon-icon ribbon-normal" src="PaintIcons/dropdown-arrow.png" width="5px" height="5px"/>
+                    </span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Image/Select/rectangular-selection-02.png" height="40px" width="40px"/>
+
+                    <div id="selectDropdown" class="dropdown-content">
+                        <div class="dropdown-section">Selection shapes</div>
+                        <span onclick="updateSelection('rectangular-selection')"><table><tr><td class="dropdown-item-image"><img id="rectangular-selection" src="PaintIcons/Image/Select/rectangular-selection-02.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Rectangular selection</td></tr></table></span>
+                        <span onclick="updateSelection('free-form-selection')"><table><tr><td class="dropdown-item-image"><img id="free-form-selection" src="PaintIcons/Image/Select/free-form-selection.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Free-form selection</td></tr></table></span>
+
+                        <div class="dropdown-section">Selection options</div>
+                        <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Select/invert-selection.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Invert selection</td></tr></table></span>
+                        <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Select/delete.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Delete</td></tr></table></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ribbon-section" style="width: 75px">
+                <div class="ribbon-button ribbon-button-small" id="crop-btn">
+                    <span class="button-title">Crop</span>
+                    <span class="button-help">Cutting the image in such a way that it contains only the current selection</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Image/crop.png"/>
+                </div>
+
+                <div class="ribbon-button ribbon-button-small dropdown" id="rotate-or-flip-btn">
+                    <div class="button-title" onclick="dropdownRotate()">
+                        Rotate
+                        <img class="dropdown-arrow-image" src="PaintIcons/dropdown-arrow.png"/>
+                    </div>
+
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Image/Rotate/rotate-right-90.png"/>
+
+                    <div id="rotateDropdown" class="dropdown-content">
+                        <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Rotate/rotate-right-90.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Rotate right 90&#176;</td></tr></table></span>
+                        <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Rotate/rotate-left-90.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Rotate left 90&#176;</td></tr></table></span>
+                        <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Rotate/rotate-180.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Rotate 180&#176;</td></tr></table></span>
+                        <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Rotate/flip-vertical.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Flip vertical</td></tr></table></span>
+                        <span><table><tr><td class="dropdown-item-image"><img src="PaintIcons/Image/Rotate/flip-horizontal.png" height="16px" width="16px"/></td><td class="dropdown-item-text">Flip horizontal</td></tr></table></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ribbon-section-sep"></div>
+
+<!--        Tools section-->
+        <div class="ribbon-section">
+            <span class="section-title">Tools</span>
+
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small first-row-tools" id="pencil-btn">
+                    <span class="button-help">Drawing a line with freehand</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/pencil.png"/>
+                </div>
+                <div class="ribbon-button ribbon-button-small second-row-tools" id="eraser-btn">
+                    <span class="button-help">Deleting a part of the image and replacing it with the color of the font</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/eraser.png"/>
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small first-row-tools" id="fill-with-color-btn">
+                    <span class="button-help">Click on a part of the canvas in order to fill it with the current selected color</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/fill-with-color.png"/>
+                </div>
+                <div class="ribbon-button ribbon-button-small second-row-tools" id="picker-btn">
+                    <span class="button-help">Pick a color from the color schema</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/picker.png"/>
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small first-row-tools" id="text-btn">
+                    <span class="button-help">Add text to the image</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/text.png"/>
+                </div>
+                <div class="ribbon-button ribbon-button-small second-row-tools" id="magnifier-btn">
+                    <span class="button-help">Change the zoom effect on the selected part of the image</span>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/Tools/magnifier.png"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="ribbon-section-sep"></div>
+
+<!--        Brushes-->
+        <div class="ribbon-section">
+            <div class="ribbon-button ribbon-button-large dropdown" id="brushes-btn">
+                    <span class="button-title" onclick="dropdownBrushes()">
+                        Brushes
+                        <br/>
+                        <img class="ribbon-icon ribbon-normal" src="PaintIcons/dropdown-arrow.png" width="5px" height="5px"/>
+                    </span>
+                <img class="ribbon-icon ribbon-normal" id="selected-brush" src="PaintIcons/Brushes/brush.png" width="40px" height="40px"/>
+
+                <div id="brushesDropdown" class="dropdown-content">
+                    <table>
+                        <tr>
+                            <td><span><img class="ribbon-icon ribbon-normal" id="brush" src="PaintIcons/Brushes/brush.png" width="40px" height="40px" onclick="updateBrushIcon('brush')"/></span></td>
+                            <td><span><img class="ribbon-icon ribbon-normal" id="calligraphy-brush" src="PaintIcons/Brushes/calligraphy-brush-1.png" width="40px" height="40px" onclick="updateBrushIcon('calligraphy-brush')"/></span></td>
+                        </tr>
+                        <tr>
+                            <td><span><img class="ribbon-icon ribbon-normal" id="airbrush" src="PaintIcons/Brushes/airbrush.png" width="40px" height="40px" onclick="updateBrushIcon('airbrush')"/></span></td>
+                            <td><span><img class="ribbon-icon ribbon-normal" id="marker" src="PaintIcons/Brushes/marker.png" width="40px" height="40px" onclick="updateBrushIcon('marker')"/></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="ribbon-section-sep"></div>
+
+<!--        Shapes section-->
+        <div class="ribbon-section" style="width: 99px">
+            <span class="section-title">Shapes</span>
+
+            <div class="slideshow-container">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
+                <div class="slide fade" style="display: block">
+                    <div class="ribbon-section">
+                        <div class="ribbon-button ribbon-button-small shape-image" id="line-btn">
+                            <span class="button-help">Line</span>
+                            <img class="ribbon-icon ribbon-normal shape-size" src="PaintIcons/Shapes/line.png"/>
+                        </div>
+                    </div>
+                    <div class="ribbon-section">
+                        <div class="ribbon-button ribbon-button-small shape-image" id="oval-btn">
+                            <span class="button-help">Oval</span>
+                            <img class="ribbon-icon ribbon-normal shape-size" src="PaintIcons/Shapes/oval.png"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide fade">
+                    <div class="ribbon-section">
+                        <div class="ribbon-button ribbon-button-small shape-image" id="rectangle-btn">
+                            <span class="button-help">Rectangle</span>
+                            <img class="ribbon-icon ribbon-normal shape-size" src="PaintIcons/Shapes/rectangle.png"/>
+                        </div>
+                    </div>
+                    <div class="ribbon-section">
+                        <div class="ribbon-button ribbon-button-small shape-image" id="triangle-btn">
+                            <span class="button-help">Triangle</span>
+                            <img class="ribbon-icon ribbon-normal shape-size" src="PaintIcons/Shapes/triangle.png"/>
+                        </div>
+                    </div>
+                </div>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </div>
+
+        <div class="ribbon-section-sep"></div>
+
+<!--        Size-->
+        <div class="ribbon-section">
+            <div class="ribbon-button ribbon-button-large dropdown" id="size-btn">
+                <div class="button-title" onclick="dropdownSize()">
+                    Size
+                    <br/>
+                    <img class="ribbon-icon ribbon-normal" src="PaintIcons/dropdown-arrow.png" width="5px" height="5px"/>
+                </div>
+
+                <img class="ribbon-icon ribbon-normal" src="PaintIcons/size.png"/>
+
+                <div id="sizeDropdown" class="dropdown-content">
+                    <span><table><tr><td class="dropdown-item-image">1px</td><td class="dropdown-item-text"><div class="line-size-1px"></div></td></tr></table></span>
+                    <span><table><tr><td class="dropdown-item-image">3px</td><td class="dropdown-item-text"><div class="line-size-3px"></div></td></tr></table></span>
+                    <span><table><tr><td class="dropdown-item-image">5px</td><td class="dropdown-item-text"><div class="line-size-5px"></div></td></tr></table></span>
+                    <span><table><tr><td class="dropdown-item-image">8px</td><td class="dropdown-item-text"><div class="line-size-8px"></div></td></tr></table></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="ribbon-section-sep"></div>
+
+<!--        Colors section-->
+        <div class="ribbon-section">
+            <span class="section-title">Colors</span>
+
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-large" id="color-1-btn">
+                    <span class="button-title">
+                        Color
+                        <br>
+                        1
+                    </span>
+                    <div class="current-color-border">
+                        <div class="current-color" style="background-color: black;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small color-view" id="black-btn">
+                    <span class="button-help">Black</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: black;" onclick="updateColor('black-btn')"></div>
+                    </div>
+                </div>
+                <div class="ribbon-button ribbon-button-small color-view" id="white-btn">
+                    <span class="button-help">White</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: white;" onclick="updateColor('white-btn')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small color-view" id="gray-btn">
+                    <span class="button-help">Gray</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: gray;" onclick="updateColor('gray-btn')"></div>
+                    </div>
+                </div>
+                <div class="ribbon-button ribbon-button-small color-view" id="lightgray-btn">
+                    <span class="button-help">Light gray</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: lightgray;" onclick="updateColor('lightgray-btn')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small color-view" id="dark-red-btn">
+                    <span class="button-help">Dark red</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: darkred;" onclick="updateColor('dark-red-btn')"></div>
+                    </div>
+                </div>
+                <div class="ribbon-button ribbon-button-small color-view" id="brown-btn">
+                    <span class="button-help">Brown</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: saddlebrown;" onclick="updateColor('brown-btn')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small color-view" id="red-btn">
+                    <span class="button-help">Red</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: red;" onclick="updateColor('red-btn')"></div>
+                    </div>
+                </div>
+                <div class="ribbon-button ribbon-button-small color-view" id="lightpink-btn">
+                    <span class="button-help">Light pink</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: lightpink;" onclick="updateColor('lightpink-btn')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small color-view" id="orange-btn">
+                    <span class="button-help">Orange</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: orange;" onclick="updateColor('orange-btn')"></div>
+                    </div>
+                </div>
+                <div class="ribbon-button ribbon-button-small color-view" id="gold-btn">
+                    <span class="button-help">Gold</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: gold;" onclick="updateColor('gold-btn')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small color-view" id="yellow-btn">
+                    <span class="button-help">Yellow</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: yellow;" onclick="updateColor('yellow-btn')"></div>
+                    </div>
+                </div>
+                <div class="ribbon-button ribbon-button-small color-view" id="lightyellow-btn">
+                    <span class="button-help">Light yellow</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: lightyellow;" onclick="updateColor('lightyellow-btn')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small color-view" id="green-btn">
+                    <span class="button-help">Green</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: green;" onclick="updateColor('green-btn')"></div>
+                    </div>
+                </div>
+                <div class="ribbon-button ribbon-button-small color-view" id="lime-btn">
+                    <span class="button-help">Lime</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: lime;" onclick="updateColor('lime-btn')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small color-view" id="turquoise-btn">
+                    <span class="button-help">Turquoise</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: turquoise;" onclick="updateColor('turquoise-btn')"></div>
+                    </div>
+                </div>
+                <div class="ribbon-button ribbon-button-small color-view" id="paleturquoise-btn">
+                    <span class="button-help">Pale turquoise</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: paleturquoise;" onclick="updateColor('paleturquoise-btn')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small color-view" id="blue-btn">
+                    <span class="button-help">Blue</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: blue;" onclick="updateColor('blue-btn')"></div>
+                    </div>
+                </div>
+                <div class="ribbon-button ribbon-button-small color-view" id="deepskyblue-btn">
+                    <span class="button-help">Deep sky blue</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: deepskyblue;" onclick="updateColor('deepskyblue-btn')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small color-view" id="cornflowerblue-btn">
+                    <span class="button-help">Cornflower blue</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: cornflowerblue;" onclick="updateColor('cornflowerblue-btn')"></div>
+                    </div>
+                </div>
+                <div class="ribbon-button ribbon-button-small color-view" id="steelblue-btn">
+                    <span class="button-help">Steel blue</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: steelblue;" onclick="updateColor('steelblue-btn')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small color-view" id="purple-btn">
+                    <span class="button-help">Purple</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: purple;" onclick="updateColor('purple-btn')"></div>
+                    </div>
+                </div>
+                <div class="ribbon-button ribbon-button-small color-view" id="lavender-btn">
+                    <span class="button-help">Lavender</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: lavender;" onclick="updateColor('lavender-btn')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ribbon-section">
+                <div class="ribbon-button ribbon-button-small color-view" id="mediumpurple-btn">
+                    <span class="button-help">Medium purple</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: mediumpurple;" onclick="updateColor('mediumpurple-btn')"></div>
+                    </div>
+                </div>
+                <div class="ribbon-button ribbon-button-small color-view" id="violet-btn">
+                    <span class="button-help">Violet</span>
+                    <div class="color-border">
+                        <div class="color-size" style="background-color: violet;" onclick="updateColor('violet-btn')"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ribbon-section-sep"></div>
+
+<!--        Logout-->
+        <div class="ribbon-section" style="margin-left: 43%;">
+            <div class="ribbon-button ribbon-button-large" id="logout-btn">
+                    <span class="button-title">
+                        Logout
+                    </span>
+                <img class="ribbon-icon ribbon-normal" src="PaintIcons/profile.png" width="40px" height="40px"/>
+            </div>
+        </div>
+    </div>
+
+<!--    Gallery tab-->
+    <div class="ribbon-tab" id="gallery-tab">
+        <span class="ribbon-title">Gallery</span>
+
+        <div class="ribbon-section">
+            <div class="picture-border">
+                <img class="picture" src="Pictures/blue-night-sky.png"/>
+            </div>
+        </div>
+
+        <div class="ribbon-section-sep"></div>
+
+        <div class="ribbon-section">
+            <div class="picture-border">
+                <img class="picture" src="Pictures/water.jpg"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id = "drawing-canvas-container" class="page">
+    <canvas id = "drawing-canvas" width = "1600px" height = "650px"></canvas>
+    <canvas id = "temp-canvas" width = "1600px" height = "650px"></canvas>
+</div>
+
+<div id="add-to-gallery-btn" class="hexagon-wrapper">
+    <div class="hexagon">
+        <i>+</i>
+    </div>
+</div>
+
+<script type="text/javascript">
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let slides = document.getElementsByClassName("slide");
+
+        if (n > slides.length) {
+            slideIndex = 1
         }
-        
-    </script> -->
+
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slides[slideIndex-1].style.display = "block";
+    }
+</script>
 
 </body>
-
 </html>
